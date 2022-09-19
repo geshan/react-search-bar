@@ -8,7 +8,7 @@ const HackerNewsStories = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const data = await (await fetch('https://hn.algolia.com/api/v1/search_by_date?tags=front_page&hitsPerPage=25')).json();
+        const data = await (await fetch('https://hn.algolia.com/api/v1/search_by_date?tags=front_page&hitsPerPage=20')).json();
         setStories(
           data.hits.sort((story, nextStory) => (story.points < nextStory.points ? 1 : -1))
         );
