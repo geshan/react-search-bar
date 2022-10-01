@@ -6,7 +6,7 @@ const HackerNewsStories = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchUsers = async () => {
+    const fetchStories = async () => {
       try {
         const data = await (await fetch('https://hn.algolia.com/api/v1/search_by_date?tags=front_page&hitsPerPage=20')).json();
         setStories(
@@ -20,7 +20,7 @@ const HackerNewsStories = () => {
         setLoading(false);
       }
     };
-    fetchUsers();
+    fetchStories();
   }, []);
 
   return (
@@ -33,7 +33,7 @@ const HackerNewsStories = () => {
           stories.map(({ objectID, url, title, author, points }) => (
             title && url &&
             <div className='stories-list' key={objectID}>
-              <h3><a href={url} target="_blank" rel="noreferrer">{title}</a> - By {author} ({points} points)</h3>
+              <h3><a href={url} target="_blank" rel="noreferrer">{title}</a> - By <b>{author}</b> ({points} points)</h3>
             </div>                        
           ))}
       </div>
