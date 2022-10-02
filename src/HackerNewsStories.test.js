@@ -69,3 +69,27 @@ test('should show stories after they are fetched', async () => {
     expect(screen.getByText('homarp')).toBeInTheDocument();
   });  
 });
+
+test('should show and then hide the loading message when stories load', async() => {
+  render(<HackerNewsStories />);
+  const loadingText = screen.getByText('HackerNews frontpage stories loading...');
+  expect(loadingText).toBeInTheDocument();
+  expect(windowFetchSpy).toHaveBeenCalled();
+
+  // await waitFor(() => {
+  //   const loadingText = screen.queryByText('HackerNews frontpage stories loading...');
+  //   expect(loadingText).not.toBeInTheDocument();
+  // });
+
+  await waitForElementToBeRemoved(() => screen.getByText('HackerNews frontpage stories loading...'), {timeout: 75});
+});
+
+test('should show stories sorted by maximum points first', async() => {
+  render(<HackerNewsStories />);
+  expect(windowFetchSpy).toHaveBeenCalled();
+
+  const stories = await screen.findAllByRole('heading', {level : 3});
+  expect(stories).toHaveLength(2);
+  expect(stories[0]).toHaveAccessibleName('The self-taught UI/UX designer roadmap (2021) - By homarp (253 points)');
+  expect(stories[1]).toHaveAccessibleName('TikTok tracks you across the web, even if you don’t use the app - By bubblehack3r (123 points)');
+});
