@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import HackerNewsStories from "./HackerNewsStories";
 
-const HackerNewsStoriesWithSearch = (props) => {
+const HackerNewsStoriesWithSearch = () => {
   const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
