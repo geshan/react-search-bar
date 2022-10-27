@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import HackerNewsStories from "./HackerNewsStories";
+import HackerNewsStories from './HackerNewsStories';
 
 const HackerNewsStoriesWithSearch = () => {
   const [stories, setStories] = useState([]);

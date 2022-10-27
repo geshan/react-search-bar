@@ -1,5 +1,5 @@
 import './App.css';
-import HackerNewsStoriesWithSearch from "./HackerNewsStoriesWithSerach";
+import HackerNewsStoriesWithSearch from './HackerNewsStoriesWithSerach';
 
 
 function App() {
