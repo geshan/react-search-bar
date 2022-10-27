@@ -1,11 +1,11 @@
 import './App.css';
-import HackerNewsStories from "./HackerNewsStories";
+import HackerNewsStoriesWithSearch from "./HackerNewsStoriesWithSerach";
 
 
 function App() {
   return (
     <div className="App">
-      <HackerNewsStories />
+      <HackerNewsStoriesWithSearch />
     </div>
   );
 }
