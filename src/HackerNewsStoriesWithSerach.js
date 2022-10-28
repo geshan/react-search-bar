@@ -24,7 +24,7 @@ const HackerNewsStoriesWithSearch = () => {
     }
   };
 
-  const updateKeyword = async (keyword) => {
+  const updateKeyword = (keyword) => {
     const filtered = allStories.filter(story => {
      return `${story.title.toLowerCase()} ${story.author.toLowerCase()}`.includes(keyword.toLowerCase());
     })
