@@ -11,4 +11,4 @@ const SearchBar = ({keyword, onChange}) => {
   );
 }
 
-export default SearchBar
+export default SearchBar;

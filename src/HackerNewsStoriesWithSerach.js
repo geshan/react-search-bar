@@ -26,7 +26,7 @@ const HackerNewsStoriesWithSearch = () => {
 
   const updateKeyword = async (keyword) => {
     const filtered = allStories.filter(story => {
-     return story.title.toLowerCase().includes(keyword.toLowerCase())
+     return `${story.title.toLowerCase()} ${story.author.toLowerCase()}`.includes(keyword.toLowerCase());
     })
     setKeyword(keyword);
     setStories(filtered);
