@@ -3,7 +3,7 @@ const HackerNewsStories = ({ stories = [] }) => {
     <div className="grid grid-cols-1 gap-2">
       {stories &&
         stories.map(
-          ({ objectID, url, title, author, points, _tags }) =>
+          ({ objectID, url, title, author, points }) =>
             title &&
             url && (
               <a
@@ -16,7 +16,7 @@ const HackerNewsStories = ({ stories = [] }) => {
                 <div className="p-2 bg-gray-100 rounded">
                   <h3 className="text-md">{title}</h3>
                   <div className="text-sm text-gray-600">
-                    By <b>{author}</b> ({points} points)
+                    By <b>{author}</b> ({points ?? 0} points)
                   </div>
                 </div>
               </a>
