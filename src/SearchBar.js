@@ -1,14 +1,13 @@
-const SearchBar = ({keyword, onChange}) => {
-  const BarStyle = {width:"20rem",background:"#F0F0F0", border:"none", padding:"0.5rem"};
+const SearchBar = ({ keyword, onChange }) => {
   return (
-    <input 
-     style={BarStyle}
-     key="search-bar"
-     value={keyword}
-     placeholder={"search news"}
-     onChange={(e) => onChange(e.target.value)}
+    <input
+      className="border border-gray-300 px-5 py-2 w-full rounded-full bg-gray-100"
+      key="search-bar"
+      value={keyword}
+      placeholder={"Search news..."}
+      onChange={(e) => onChange(e.target.value)}
     />
   );
-}
+};
 
 export default SearchBar;
